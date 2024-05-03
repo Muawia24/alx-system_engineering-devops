@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+STR="Best School"
+i=10
+until [ $i -eq 1 ]; do
+	echo "$STR"
+	i=$((i-1))
+done
