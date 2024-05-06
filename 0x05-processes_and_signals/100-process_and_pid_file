@@ -5,14 +5,19 @@
 #Displays Y U no love me?! when receiving a SIGINT signal
 #Deletes the file /var/run/myscript.pid and
 #+terminates itself when receiving a SIGQUIT or SIGTERM signal
-function love() {
-    rm /var/run/myscript.pid
-    exit
+
+sudo touch /var/run/holbertonscript.pid
+function hate() {
+	echo "I hate the kill command"
+	sudo rm /var/run/myscript.pid
+	exit
 }
-trap 'echo "I hate the kill command"' SIGTERM
+trap 'hate' SIGTERM
 trap 'echo "Y U no love me?!"' SIGINT
+trap 'sudo rm /var/run/myscript.pid' SIGQUIT
 fname="/var/run/myscript.pid"
 echo $$ >>$fname
 while true; do
 	echo "To infinity and beyond"
+	sleep 2
 done
