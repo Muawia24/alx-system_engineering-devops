@@ -12,7 +12,7 @@ function love() {
 trap 'echo "I hate the kill command"' SIGTERM
 trap 'echo "Y U no love me?!"' SIGINT
 fname="/var/run/myscript.pid"
-echo $$ >>fname
+echo $$ >>$fname
 while [ true ]; do
 	echo "To infinity and beyond"
 done
