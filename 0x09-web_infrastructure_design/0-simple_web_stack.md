@@ -1,6 +1,6 @@
 # Simple Web Stack
 
-![Image of a simple web stack](web-infrastructure-0.jpg)
+![Image of a simple web stack](web-infrastructure-0.png)
 
 [Visit Board](https://imgur.com/a/DR3tYgR)
 
