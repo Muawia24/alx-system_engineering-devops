@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Configuring port 80 to nginx
+sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+pkill -1 nginx
