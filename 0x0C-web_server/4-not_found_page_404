@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#  Redirection
+
+REDIRECT="\\\trewrite ^/redirect_me https://x.com/Un_PajaroLibre permanent;"
+ERROR_404="\n\\terror_page 404 /404.html;\n\tlocation = /var/www/html/404.html {\n\t\tinternal;\n\t}"
+PATERN="#error_page 404 /404.html;"
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo chown -R ubuntu /var/www
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+sudo sed -i "30i $REDIRECT" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+sudo sed -i "46i\ $PATERN$ERROR_404" /etc/nginx/sites-available/default
+sudo service nginx restart
+sudo service nginx reload
