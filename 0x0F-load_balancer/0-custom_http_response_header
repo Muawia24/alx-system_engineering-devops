@@ -11,6 +11,6 @@ echo "Hello World!" > /var/www/html/index.nginx-debian.html
 sudo sed -i "30i $REDIRECT" /etc/nginx/sites-available/default
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 sudo sed -i "46i\ $PATERN$ERROR_404" /etc/nginx/sites-available/default
-RES_HEADER="http {\\n\\tadd_header X-Served-By \"$HOSTNAME\";"
-sudo sed -i "s/http {/$RES_HEADER/" /etc/nginx/nginx.conf
+RES_HEADER="http {\\\tadd_header X-Served-By \"$HOSTNAME\";"
+sudo sed -i "32i $RES_HEADER" /etc/nginx/sites-available/default
 sudo service nginx restart
