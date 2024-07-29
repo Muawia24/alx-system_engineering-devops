@@ -12,8 +12,10 @@ if __name__ == '__main__':
             "https://jsonplaceholder.typicode.com/users")
 
     user_dict = {}
-    tasks = []
+
     for user in users.json():
+
+        tasks = []
         userId = user.get('id')
 
         todos = requests.get("https://jsonplaceholder.typicode.com/todos")
