@@ -31,4 +31,4 @@ if __name__ == '__main__':
     for task in todos.json():
         if (task.get('userId') == int(emp_id)):
             if (task.get('completed')):
-                print(task.get('title'))
+                print('\t' + task.get('title'))
