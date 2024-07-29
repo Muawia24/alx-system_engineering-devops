@@ -20,12 +20,12 @@ if __name__ == '__main__':
     todos = requests.get("https://jsonplaceholder.typicode.com/todos")
 
     for task in todos.json():
-        if(task.get('userId') == int(emp_id)):
+        if (task.get('userId') == int(emp_id)):
             tot_tasks += 1
-            if(task.get('completed')):
+            if (task.get('completed')):
                 done_tasks += 1
 
-    print("Employe {} is done with tasks({}/{}):".format(
+    print("Employee {} is done with tasks({}/{}):".format(
         name, done_tasks, tot_tasks))
 
     for task in todos.json():
