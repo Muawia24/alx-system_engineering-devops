@@ -8,7 +8,7 @@ def top_ten(subreddit):
     given subreddit."""
     import requests
 
-    headers = {'User-Agent': 'My-User-Agent'}
+    headers = {'User-Agent': 'Mozilla/5.0'}
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     response = requests.get(url, headers=headers, allow_redirects=False)
 
