@@ -1,0 +1,103 @@
+execve("/usr/sbin/apache2ctl", ["/usr/sbin/apache2ctl", "start"], 0x7ffd1327a798 /* 14 vars */) = 0
+brk(NULL)                               = 0x563fad059000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffd2d05ec40) = -1 EINVAL (Invalid argument)
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=19782, ...}) = 0
+mmap(NULL, 19782, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f290c0bd000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\300A\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32, 848) = 32
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\7\2C\n\357_\243\335\2449\206V>\237\374\304"..., 68, 880) = 68
+fstat(3, {st_mode=S_IFREG|0755, st_size=2029592, ...}) = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f290c0bb000
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32, 848) = 32
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\7\2C\n\357_\243\335\2449\206V>\237\374\304"..., 68, 880) = 68
+mmap(NULL, 2037344, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f290bec9000
+mmap(0x7f290beeb000, 1540096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x22000) = 0x7f290beeb000
+mmap(0x7f290c063000, 319488, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x19a000) = 0x7f290c063000
+mmap(0x7f290c0b1000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e7000) = 0x7f290c0b1000
+mmap(0x7f290c0b7000, 13920, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f290c0b7000
+close(3)                                = 0
+arch_prctl(ARCH_SET_FS, 0x7f290c0bc580) = 0
+mprotect(0x7f290c0b1000, 16384, PROT_READ) = 0
+mprotect(0x563fab7c2000, 8192, PROT_READ) = 0
+mprotect(0x7f290c0ef000, 4096, PROT_READ) = 0
+munmap(0x7f290c0bd000, 19782)           = 0
+getuid()                                = 0
+getgid()                                = 0
+getpid()                                = 2061
+rt_sigaction(SIGCHLD, {sa_handler=0x563fab7b7c30, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7f290bf0c090}, NULL, 8) = 0
+geteuid()                               = 0
+brk(NULL)                               = 0x563fad059000
+brk(0x563fad07a000)                     = 0x563fad07a000
+getppid()                               = 2058
+stat("/root/alx-system_engineering-devops/0x17-web_stack_debugging_3", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat(".", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+openat(AT_FDCWD, "/usr/sbin/apache2ctl", O_RDONLY) = 3
+fcntl(3, F_DUPFD, 10)                   = 10
+close(3)                                = 0
+fcntl(10, F_SETFD, FD_CLOEXEC)          = 0
+geteuid()                               = 0
+getegid()                               = 0
+rt_sigaction(SIGINT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGINT, {sa_handler=0x563fab7b7c30, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7f290bf0c090}, NULL, 8) = 0
+rt_sigaction(SIGQUIT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7f290bf0c090}, NULL, 8) = 0
+rt_sigaction(SIGTERM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGTERM, {sa_handler=SIG_DFL, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7f290bf0c090}, NULL, 8) = 0
+read(10, "#!/bin/sh\n#\n# Licensed to the Ap"..., 8192) = 7229
+stat("/etc/apache2/envvars", {st_mode=S_IFREG|0644, st_size=1782, ...}) = 0
+openat(AT_FDCWD, "/etc/apache2/envvars", O_RDONLY) = 3
+fcntl(3, F_DUPFD, 10)                   = 11
+close(3)                                = 0
+fcntl(11, F_SETFD, FD_CLOEXEC)          = 0
+read(11, "# envvars - default environment "..., 8192) = 1782
+read(11, "", 8192)                      = 0
+close(11)                               = 0
+pipe([3, 4])                            = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f290c0bc850) = 2062
+close(4)                                = 0
+read(3, "0\n", 128)                     = 2
+read(3, "", 128)                        = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=2062, si_uid=0, si_status=0, si_utime=0, si_stime=1} ---
+rt_sigreturn({mask=[]})                 = 0
+close(3)                                = 0
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 2062
+prlimit64(0, RLIMIT_NOFILE, NULL, {rlim_cur=1024*1024, rlim_max=1024*1024}) = 0
+prlimit64(0, RLIMIT_NOFILE, {rlim_cur=8*1024, rlim_max=8*1024}, NULL) = 0
+stat("/var/run/apache2", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/lock/apache2", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+openat(AT_FDCWD, "/var/run/apache2/", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+fstat(3, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+getdents64(3, /* 3 entries */, 32768)   = 80
+getdents64(3, /* 0 entries */, 32768)   = 0
+close(3)                                = 0
+stat("/usr/local/sbin/rm", 0x7ffd2d05e7d0) = -1 ENOENT (No such file or directory)
+stat("/usr/local/bin/rm", 0x7ffd2d05e7d0) = -1 ENOENT (No such file or directory)
+stat("/usr/sbin/rm", 0x7ffd2d05e7d0)    = -1 ENOENT (No such file or directory)
+stat("/usr/bin/rm", {st_mode=S_IFREG|0755, st_size=72056, ...}) = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f290c0bc850) = 2063
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 2063
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=2063, si_uid=0, si_status=0, si_utime=0, si_stime=1} ---
+rt_sigreturn({mask=[]})                 = 2063
+wait4(-1, 0x7ffd2d05e70c, WNOHANG, NULL) = -1 ECHILD (No child processes)
+pipe([3, 4])                            = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f290c0bc850) = 2064
+close(4)                                = 0
+read(3, "/usr/bin/bash\n", 128)         = 14
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=2064, si_uid=0, si_status=0, si_utime=0, si_stime=0} ---
+rt_sigreturn({mask=[]})                 = 14
+read(3, "", 128)                        = 0
+close(3)                                = 0
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 2064
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f290c0bc850) = 2065
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 2065
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=2065, si_uid=0, si_status=0, si_utime=3, si_stime=3} ---
+rt_sigreturn({mask=[]})                 = 2065
+wait4(-1, 0x7ffd2d05e76c, WNOHANG, NULL) = -1 ECHILD (No child processes)
+exit_group(0)                           = ?
++++ exited with 0 +++
