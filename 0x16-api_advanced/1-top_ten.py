@@ -12,11 +12,14 @@ def top_ten(subreddit):
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     response = requests.get(url, headers=headers, allow_redirects=False)
 
-    if response.status_code == 200:
-        data = response.json()
-        hot_list = data['data']['children']
-        for i in range(10):
-            print(hot_list[i]['data']['title'])
-    else:
+    try:
+        if response.status_code == 200:
+            data = response.json()
+            hot_list = data['data']['children']
+            for i in range(10):
+                print(hot_list[i]['data']['title'])
+        else:
+            print("None")
+            return
+    except (ValueError, KeyError):
         print("None")
-        return 0
