@@ -18,4 +18,5 @@ def top_ten(subreddit):
         for i in range(10):
             print(hot_list[i]['data']['title'])
     else:
+        print("None")
         return 0
