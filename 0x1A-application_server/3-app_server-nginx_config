@@ -43,20 +43,27 @@ server {
 
         server_name _;
 
-        location / {
-                # First attempt to serve request as file, then
-                # as directory, then fall back to displaying a 404.
-                try_files $uri $uri/ =404;
-        }
 
         location /airbnb-onepage/ {
-                proxy_pass http://0.0.0.0:5000/airbnb-onepage;
+                proxy_pass http://0.0.0.0:5000/airbnb-onepage/;
         }
 
-        location ~ /airbnb-dynamic/number_odd_or_even/(\d+)$ {
-                proxy_pass http://0.0.0.0:5001/number_odd_or_even/\$1;
+        location ~ ^/airbnb-dynamic/number_odd_or_even/([0-9]+)$ {
+                include proxy_params;
+                proxy_pass http://0.0.0.0:5001/number_odd_or_even/$1;
         }
 
+        location /api/ {
+                proxy_pass http://0.0.0.0:5002/api/;
+        }
+
+        location / {
+                proxy_pass http://0.0.0.0:5003/2-hbnb;
+        }
+
+        location /static {
+                proxy_pass http://0.0.0.0:5003;
+        }
         # pass PHP scripts to FastCGI server
         #
         #location ~ \.php$ {
